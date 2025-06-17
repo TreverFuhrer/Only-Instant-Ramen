@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -36,11 +37,11 @@ public final class ModItems {
     // Item Groups
     public static void registerToVanillaItemGroups() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(content -> {
-            content.add(ModItems.NOODLES);
-            content.add(ModItems.RAMEN);
-            content.add(ModItems.COOKED_RAMEN);
-            content.add(ModItems.BEEF_RAMEN);
-            content.add(ModItems.COOKED_BEEF_RAMEN);
+            content.addAfter(Items.RABBIT_STEW, ModItems.NOODLES);
+            content.addAfter(ModItems.NOODLES, ModItems.RAMEN);
+            content.addAfter(ModItems.RAMEN, ModItems.COOKED_RAMEN);
+            content.addAfter(ModItems.COOKED_RAMEN, ModItems.BEEF_RAMEN);
+            content.addAfter(ModItems.BEEF_RAMEN, ModItems.COOKED_BEEF_RAMEN);
         });
     }
  

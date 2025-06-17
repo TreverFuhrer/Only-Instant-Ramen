@@ -79,7 +79,8 @@ public class ModRecipeProvider extends FabricRecipeProvider{
             new RamenRecipe(ModItems.FOX_RAMEN, List.of(ModItems.RAMEN, Items.GLOW_BERRIES, Items.GOLDEN_CARROT), "fox_ramen_from_ramen"),
             new RamenRecipe(ModItems.FOX_RAMEN, List.of(ModItems.GLOWBERRY_RAMEN, Items.GOLDEN_CARROT), "fox_ramen_from_glowberry_ramen"),
 
-            /* ---------- INVISIBILITY (Corrupted NIGHT VISION) ---------- */
+            /* ---------- INVISIBILITY ---------- */
+            /* --------- corruption of night vision ramen --------- */
             // Faint Ramen
             new RamenRecipe(ModItems.FAINT_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.GLOW_BERRIES, Items.FERMENTED_SPIDER_EYE), "faint_ramen"),
             new RamenRecipe(ModItems.FAINT_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.GLOW_BERRIES, Items.FERMENTED_SPIDER_EYE), "faint_ramen_from_noodles"),
@@ -155,14 +156,14 @@ public class ModRecipeProvider extends FabricRecipeProvider{
 
             /* ---------- HEALING ---------- */
             // Mend Ramen
-            new RamenRecipe(ModItems.MEND_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.GLISTERING_MELON_SLICE), "mend_ramen"),
-            new RamenRecipe(ModItems.MEND_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.GLISTERING_MELON_SLICE), "mend_ramen_from_noodles"),
-            new RamenRecipe(ModItems.MEND_RAMEN, List.of(ModItems.RAMEN, Items.GLISTERING_MELON_SLICE), "mend_ramen_from_ramen"),
+            new RamenRecipe(ModItems.MEND_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.MELON_SLICE), "mend_ramen"),
+            new RamenRecipe(ModItems.MEND_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.MELON_SLICE), "mend_ramen_from_noodles"),
+            new RamenRecipe(ModItems.MEND_RAMEN, List.of(ModItems.RAMEN, Items.MELON_SLICE), "mend_ramen_from_ramen"),
 
             // Revive Ramen
-            new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.GLISTERING_MELON_SLICE, Items.GLISTERING_MELON_SLICE), "revive_ramen"),
-            new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.GLISTERING_MELON_SLICE, Items.GLISTERING_MELON_SLICE), "revive_ramen_from_noodles"),
-            new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(ModItems.RAMEN, Items.GLISTERING_MELON_SLICE, Items.GLISTERING_MELON_SLICE), "revive_ramen_from_ramen"),
+            new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.MELON_SLICE, Items.GLISTERING_MELON_SLICE), "revive_ramen"),
+            new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.MELON_SLICE, Items.GLISTERING_MELON_SLICE), "revive_ramen_from_noodles"),
+            new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(ModItems.RAMEN, Items.MELON_SLICE, Items.GLISTERING_MELON_SLICE), "revive_ramen_from_ramen"),
             new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(ModItems.MEND_RAMEN, Items.GLISTERING_MELON_SLICE), "revive_ramen_from_mend_ramen"),
 
             /* ---------- RESISTANCE ---------- */
@@ -177,11 +178,81 @@ public class ModRecipeProvider extends FabricRecipeProvider{
             new RamenRecipe(ModItems.IRON_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.COBBLESTONE, Items.IRON_INGOT), "iron_ramen"),
             new RamenRecipe(ModItems.IRON_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.COBBLESTONE, Items.IRON_INGOT), "iron_ramen_from_noodles"),
 
-            /* ---------- NEGATIVE-EFFECT RAMENS ---------- */
-            new RamenRecipe(ModItems.BURNED_RAMEN, List.of(ModItems.RAMEN, Items.FERMENTED_SPIDER_EYE), "burned_ramen"),
-            new RamenRecipe(ModItems.SPOILED_RAMEN, List.of(ModItems.RAMEN, Items.SPIDER_EYE), "spoiled_ramen"),
-            new RamenRecipe(ModItems.ROTTEN_RAMEN, List.of(ModItems.RAMEN, Items.ROTTEN_FLESH), "rotten_ramen"),
-            new RamenRecipe(ModItems.THICK_RAMEN, List.of(ModItems.RAMEN, Items.POTATO), "thick_ramen")
+            /* ---------- POISON ---------- */
+            // Rotten Ramen
+            new RamenRecipe(ModItems.ROTTEN_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.SPIDER_EYE), "rotten_ramen"),
+            new RamenRecipe(ModItems.ROTTEN_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.SPIDER_EYE),"rotten_ramen_from_noodles"),
+            new RamenRecipe(ModItems.ROTTEN_RAMEN, List.of(ModItems.RAMEN, Items.SPIDER_EYE), "rotten_ramen_from_ramen"),
+
+            // Virulent Ramen
+            new RamenRecipe(ModItems.VIRULENT_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.SPIDER_EYE, Items.GLOWSTONE_DUST), "virulent_ramen"),
+            new RamenRecipe(ModItems.VIRULENT_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.SPIDER_EYE, Items.GLOWSTONE_DUST), "virulent_ramen_from_noodles"),
+            new RamenRecipe(ModItems.VIRULENT_RAMEN, List.of(ModItems.RAMEN, Items.SPIDER_EYE, Items.GLOWSTONE_DUST), "virulent_ramen_from_ramen"),
+            new RamenRecipe(ModItems.VIRULENT_RAMEN, List.of(ModItems.ROTTEN_RAMEN, Items.GLOWSTONE_DUST), "virulent_ramen_from_rotten_ramen"),
+
+
+            /* ------------------------- HARMING  ------------------------- */
+            /* ---------- corruption of health and poison ramens ---------- */
+            // Vicious Ramen
+            new RamenRecipe(ModItems.VICIOUS_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.MELON_SLICE, Items.FERMENTED_SPIDER_EYE), "vicious_mend_ramen"),
+            new RamenRecipe(ModItems.VICIOUS_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.MELON_SLICE, Items.FERMENTED_SPIDER_EYE), "vicious_mend_ramen_from_noodles"),
+            new RamenRecipe(ModItems.VICIOUS_RAMEN, List.of(ModItems.RAMEN, Items.MELON_SLICE, Items.FERMENTED_SPIDER_EYE), "vicious_mend_ramen_from_ramen"),
+            new RamenRecipe(ModItems.VICIOUS_RAMEN, List.of(ModItems.MEND_RAMEN, Items.FERMENTED_SPIDER_EYE), "vicious_mend_ramen_from_mend_ramen"),
+            new RamenRecipe(ModItems.VICIOUS_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.SPIDER_EYE, Items.FERMENTED_SPIDER_EYE), "vicious_rotten_ramen"),
+            new RamenRecipe(ModItems.VICIOUS_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.SPIDER_EYE, Items.FERMENTED_SPIDER_EYE), "vicious_rotten_ramen_from_noodles"),
+            new RamenRecipe(ModItems.VICIOUS_RAMEN, List.of(ModItems.RAMEN, Items.SPIDER_EYE, Items.FERMENTED_SPIDER_EYE), "vicious_rotten_ramen_from_ramen"),
+            new RamenRecipe(ModItems.VICIOUS_RAMEN, List.of(ModItems.VICIOUS_RAMEN, Items.FERMENTED_SPIDER_EYE), "vicious_rotten_ramen_from_vicious_ramen"),
+            
+            // Blighted Ramen
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.MELON_SLICE, Items.GLISTERING_MELON_SLICE, Items.FERMENTED_SPIDER_EYE), "blighted_revive_ramen"),
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.MELON_SLICE, Items.GLISTERING_MELON_SLICE, Items.FERMENTED_SPIDER_EYE), "blighted_revive_ramen_from_noodles"),
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(ModItems.RAMEN, Items.MELON_SLICE, Items.GLISTERING_MELON_SLICE, Items.FERMENTED_SPIDER_EYE), "blighted_revive_ramen_from_ramen"),
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(ModItems.MEND_RAMEN, Items.GLISTERING_MELON_SLICE, Items.FERMENTED_SPIDER_EYE), "blighted_revive_ramen_from_mend_ramen"),
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(ModItems.REVIVE_RAMEN, Items.FERMENTED_SPIDER_EYE), "blighted_revive_ramen_from_revive_ramen"),
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(ModItems.VICIOUS_RAMEN, Items.GLISTERING_MELON_SLICE), "blighted_revive_ramen_from_vicious_ramen"),
+
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.SPIDER_EYE, Items.GLOWSTONE_DUST, Items.FERMENTED_SPIDER_EYE), "blighted_ramen_virulent"),
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.SPIDER_EYE, Items.GLOWSTONE_DUST, Items.FERMENTED_SPIDER_EYE), "blighted_ramen_virulent_from_noodles"),
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(ModItems.RAMEN, Items.SPIDER_EYE, Items.GLOWSTONE_DUST, Items.FERMENTED_SPIDER_EYE), "blighted_ramen_virulent_from_ramen"),
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(ModItems.ROTTEN_RAMEN, Items.GLOWSTONE_DUST, Items.FERMENTED_SPIDER_EYE), "blighted_ramen_virulent_from_rotten_ramen"),
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(ModItems.VIRULENT_RAMEN, Items.FERMENTED_SPIDER_EYE), "blighted_ramen_virulent_from_virulent_ramen"),
+            new RamenRecipe(ModItems.BLIGHTED_RAMEN, List.of(ModItems.VICIOUS_RAMEN, Items.GLOWSTONE_DUST), "blighted_ramen_virulent_from_vicious_ramen"),
+
+            /* ------------------------- SLOWNESS  ------------------------- */
+            /* --------- corruption of speed and jump boost ramens --------- */
+            // Thick Ramen
+            new RamenRecipe(ModItems.THICK_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.RABBIT_HIDE, Items.FERMENTED_SPIDER_EYE), "thick_rabbit_ramen"),
+            new RamenRecipe(ModItems.THICK_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.RABBIT_HIDE, Items.FERMENTED_SPIDER_EYE), "thick_rabbit_ramen_from_noodles"),
+            new RamenRecipe(ModItems.THICK_RAMEN, List.of(ModItems.RAMEN, Items.RABBIT_HIDE, Items.FERMENTED_SPIDER_EYE), "thick_rabbit_ramen_from_ramen"),
+            new RamenRecipe(ModItems.THICK_RAMEN, List.of(ModItems.RABBIT_RAMEN, Items.FERMENTED_SPIDER_EYE), "thick_rabbit_ramen_from_rabbit_ramen"),
+            new RamenRecipe(ModItems.THICK_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.CARROT, Items.FERMENTED_SPIDER_EYE), "thick_carrot_ramen"),
+            new RamenRecipe(ModItems.THICK_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.CARROT, Items.FERMENTED_SPIDER_EYE), "thick_carrot_ramen_from_noodles"),
+            new RamenRecipe(ModItems.THICK_RAMEN, List.of(ModItems.RAMEN, Items.CARROT, Items.FERMENTED_SPIDER_EYE), "thick_carrot_ramen_from_ramen"),
+            new RamenRecipe(ModItems.THICK_RAMEN, List.of(ModItems.CARROT_RAMEN, Items.FERMENTED_SPIDER_EYE), "thick_carrot_ramen_from_carrot_ramen"),
+            
+            // Gelatinous Ramen
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.RABBIT_HIDE, Items.RABBIT_FOOT, Items.FERMENTED_SPIDER_EYE), "gelatinous_leaping_ramen"),
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.RABBIT_HIDE, Items.RABBIT_FOOT, Items.FERMENTED_SPIDER_EYE), "gelatinous_leaping_ramen_from_noodles"),
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(ModItems.RAMEN, Items.RABBIT_HIDE, Items.RABBIT_FOOT, Items.FERMENTED_SPIDER_EYE), "gelatinous_leaping_ramen_from_ramen"),
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(ModItems.RABBIT_RAMEN, Items.RABBIT_FOOT, Items.FERMENTED_SPIDER_EYE), "gelatinous_leaping_ramen_from_rabbit_ramen"),
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(ModItems.LEAPING_RAMEN, Items.FERMENTED_SPIDER_EYE), "gelatinous_leaping_ramen_from_leaping_ramen"),
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(ModItems.THICK_RAMEN, Items.RABBIT_HIDE), "gelatinous_leaping_ramen_from_thick_ramen"),
+            
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.CARROT, Items.SUGAR, Items.FERMENTED_SPIDER_EYE), "gelatinous_swift_ramen"),
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.CARROT, Items.SUGAR, Items.FERMENTED_SPIDER_EYE), "gelatinous_swift_ramen_from_noodles"),
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(ModItems.RAMEN, Items.CARROT, Items.SUGAR, Items.FERMENTED_SPIDER_EYE), "gelatinous_swift_ramen_from_ramen"),
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(ModItems.CARROT_RAMEN, Items.SUGAR, Items.FERMENTED_SPIDER_EYE), "gelatinous_swift_ramen_from_carrot_ramen"),
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(ModItems.SWIFT_RAMEN, Items.FERMENTED_SPIDER_EYE), "gelatinous_swift_ramen_from_swift_ramen"),
+            new RamenRecipe(ModItems.GELATINOUS_RAMEN, List.of(ModItems.THICK_RAMEN, Items.SUGAR), "gelatinous_swift_ramen_from_thick_ramen"),
+            
+            /* --------------- WEAKNESS (no L2) --------------- */
+            /* --------- corruption of strength ramen --------- */
+            // Spoiled Ramen
+            new RamenRecipe(ModItems.SPOILED_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.COOKED_BEEF, Items.FERMENTED_SPIDER_EYE), "spoiled_ramen"),
+            new RamenRecipe(ModItems.SPOILED_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.COOKED_BEEF, Items.FERMENTED_SPIDER_EYE), "spoiled_ramen_from_noodles"),
+            new RamenRecipe(ModItems.SPOILED_RAMEN, List.of(ModItems.RAMEN, Items.COOKED_BEEF, Items.FERMENTED_SPIDER_EYE), "spoiled_ramen_from_ramen"),
+            new RamenRecipe(ModItems.SPOILED_RAMEN, List.of(ModItems.BEEF_RAMEN, Items.FERMENTED_SPIDER_EYE), "spoiled_ramen_from_beef_ramen")
+
         );
 
 
@@ -213,7 +284,14 @@ public class ModRecipeProvider extends FabricRecipeProvider{
             new RamenPair(ModItems.FAINT_RAMEN, ModItems.COOKED_FAINT_RAMEN, "faint_ramen"),
             new RamenPair(ModItems.GHOST_RAMEN, ModItems.COOKED_GHOST_RAMEN, "ghost_ramen"),
             new RamenPair(ModItems.STONE_RAMEN, ModItems.COOKED_STONE_RAMEN, "stone_ramen"),
-            new RamenPair(ModItems.IRON_RAMEN, ModItems.COOKED_IRON_RAMEN, "iron_ramen")
+            new RamenPair(ModItems.IRON_RAMEN, ModItems.COOKED_IRON_RAMEN, "iron_ramen"),
+            new RamenPair(ModItems.ROTTEN_RAMEN, ModItems.COOKED_ROTTEN_RAMEN, "rotten_ramen"),
+            new RamenPair(ModItems.VIRULENT_RAMEN, ModItems.COOKED_VIRULENT_RAMEN, "virulent_ramen"),
+            new RamenPair(ModItems.VICIOUS_RAMEN, ModItems.COOKED_VICIOUS_RAMEN, "vicious_ramen"),
+            new RamenPair(ModItems.BLIGHTED_RAMEN, ModItems.COOKED_BLIGHTED_RAMEN, "blighted_ramen"),
+            new RamenPair(ModItems.THICK_RAMEN, ModItems.COOKED_THICK_RAMEN, "thick_ramen"),
+            new RamenPair(ModItems.GELATINOUS_RAMEN, ModItems.COOKED_GELATINOUS_RAMEN, "gelatinous_ramen"),
+            new RamenPair(ModItems.SPOILED_RAMEN, ModItems.COOKED_SPOILED_RAMEN, "spoiled_ramen")
         );
 
         for (RamenPair pair : ramenPairs) {

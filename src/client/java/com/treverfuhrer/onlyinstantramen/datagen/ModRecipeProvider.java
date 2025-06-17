@@ -34,12 +34,154 @@ public class ModRecipeProvider extends FabricRecipeProvider{
     @Override
     public void generate(RecipeExporter exporter) {
 
+
+        // PROBLEMS
+        // Invisibility has same recipe as BURNED_RAMEN
+
+
         // Recipes
         List<RamenRecipe> ramenRecipes = List.of(
+            // Base
             new RamenRecipe(ModItems.NOODLES, List.of(Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION), "noodles"),
-            new RamenRecipe(ModItems.RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION), "ramen"),
-            new RamenRecipe(ModItems.BEEF_RAMEN, List.of(ModItems.RAMEN, Items.COOKED_BEEF), "beef_ramen")
+            new RamenRecipe(ModItems.RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION), "ramen"),
+            new RamenRecipe(ModItems.RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION), "ramen_from_noodles"),
+
+            /* ---------- STRENGTH ---------- */
+            // Beef Ramen
+            new RamenRecipe(ModItems.BEEF_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.COOKED_BEEF), "beef_ramen"),
+            new RamenRecipe(ModItems.BEEF_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.COOKED_BEEF), "beef_ramen_from_noodles"),
+            new RamenRecipe(ModItems.BEEF_RAMEN, List.of(ModItems.RAMEN, Items.COOKED_BEEF), "beef_ramen_from_ramen"),
+            // Brute Ramen
+            new RamenRecipe(ModItems.BRUTE_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.COOKED_BEEF, Items.BLAZE_POWDER), "brute_ramen"),
+            new RamenRecipe(ModItems.BRUTE_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.COOKED_BEEF, Items.BLAZE_POWDER), "brute_ramen_from_noodles"),
+            new RamenRecipe(ModItems.BRUTE_RAMEN, List.of(ModItems.RAMEN, Items.COOKED_BEEF, Items.BLAZE_POWDER), "brute_ramen_from_ramen"),
+            new RamenRecipe(ModItems.BRUTE_RAMEN, List.of(ModItems.BEEF_RAMEN, Items.BLAZE_POWDER), "brute_ramen_from_beef_ramen"),
+
+            /* ---------- REGENERATION ---------- */
+            // Herbal Ramen
+            new RamenRecipe(ModItems.HERBAL_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.SUGAR), "herbal_ramen"),
+            new RamenRecipe(ModItems.HERBAL_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.SUGAR), "herbal_ramen_from_noodles"),
+            new RamenRecipe(ModItems.HERBAL_RAMEN, List.of(ModItems.RAMEN, Items.SUGAR), "herbal_ramen_from_ramen"),
+            // Goldenleaf Ramen
+            new RamenRecipe(ModItems.GOLDENLEAF_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.SUGAR, Items.GHAST_TEAR), "goldenleaf_ramen"),
+            new RamenRecipe(ModItems.GOLDENLEAF_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.SUGAR, Items.GHAST_TEAR), "goldenleaf_ramen_from_noodles"),
+            new RamenRecipe(ModItems.GOLDENLEAF_RAMEN, List.of(ModItems.RAMEN, Items.SUGAR, Items.GHAST_TEAR), "goldenleaf_ramen_from_ramen"),
+            new RamenRecipe(ModItems.GOLDENLEAF_RAMEN, List.of(ModItems.HERBAL_RAMEN, Items.GHAST_TEAR), "goldenleaf_ramen_from_herbal_ramen"),
+
+            /* ---------- NIGHT VISION ---------- */
+            // Glowberry Ramen
+            new RamenRecipe(ModItems.GLOWBERRY_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.GLOW_BERRIES), "glowberry_ramen"),
+            new RamenRecipe(ModItems.GLOWBERRY_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.GLOW_BERRIES), "glowberry_ramen_from_noodles"),
+            new RamenRecipe(ModItems.GLOWBERRY_RAMEN, List.of(ModItems.RAMEN, Items.GLOW_BERRIES), "glowberry_ramen_from_ramen"),
+            // Fox Ramen
+            new RamenRecipe(ModItems.FOX_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.GLOW_BERRIES, Items.GOLDEN_CARROT), "fox_ramen"),
+            new RamenRecipe(ModItems.FOX_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.GLOW_BERRIES, Items.GOLDEN_CARROT), "fox_ramen_from_noodles"),
+            new RamenRecipe(ModItems.FOX_RAMEN, List.of(ModItems.RAMEN, Items.GLOW_BERRIES, Items.GOLDEN_CARROT), "fox_ramen_from_ramen"),
+            new RamenRecipe(ModItems.FOX_RAMEN, List.of(ModItems.GLOWBERRY_RAMEN, Items.GOLDEN_CARROT), "fox_ramen_from_glowberry_ramen"),
+
+            /* ---------- JUMP BOOST ---------- */
+            // Rabbit Ramen
+            new RamenRecipe(ModItems.RABBIT_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.RABBIT_HIDE), "rabbit_ramen"),
+            new RamenRecipe(ModItems.RABBIT_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.RABBIT_HIDE), "rabbit_ramen_from_noodles"),
+            new RamenRecipe(ModItems.RABBIT_RAMEN, List.of(ModItems.RAMEN, Items.RABBIT_HIDE), "rabbit_ramen_from_ramen"),
+            // Leaping Ramen
+            new RamenRecipe(ModItems.LEAPING_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.RABBIT_HIDE, Items.RABBIT_FOOT), "leaping_ramen"),
+            new RamenRecipe(ModItems.LEAPING_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.RABBIT_HIDE, Items.RABBIT_FOOT), "leaping_ramen_from_noodles"),
+            new RamenRecipe(ModItems.LEAPING_RAMEN, List.of(ModItems.RAMEN, Items.RABBIT_HIDE, Items.RABBIT_FOOT), "leaping_ramen_from_ramen"),
+            new RamenRecipe(ModItems.LEAPING_RAMEN, List.of(ModItems.RABBIT_RAMEN, Items.RABBIT_FOOT), "leaping_ramen_from_rabbit_ramen"),
+
+            /* ---------- SLOW FALLING ---------- */
+            // Feather Ramen
+            new RamenRecipe(ModItems.FEATHER_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.FEATHER), "feather_ramen"),
+            new RamenRecipe(ModItems.FEATHER_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.FEATHER), "feather_ramen_from_noodles"),
+            new RamenRecipe(ModItems.FEATHER_RAMEN, List.of(ModItems.RAMEN, Items.FEATHER), "feather_ramen_from_ramen"),
+
+            // Cloud Ramen
+            new RamenRecipe(ModItems.CLOUD_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.FEATHER, Items.PHANTOM_MEMBRANE), "cloud_ramen"),
+            new RamenRecipe(ModItems.CLOUD_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.FEATHER, Items.PHANTOM_MEMBRANE), "cloud_ramen_from_noodles"),
+            new RamenRecipe(ModItems.CLOUD_RAMEN, List.of(ModItems.RAMEN, Items.FEATHER, Items.PHANTOM_MEMBRANE), "cloud_ramen_from_ramen"),
+            new RamenRecipe(ModItems.CLOUD_RAMEN, List.of(ModItems.FEATHER_RAMEN, Items.PHANTOM_MEMBRANE), "cloud_ramen_from_feather_ramen"),
+
+            /* ---------- FIRE RESISTANCE ---------- */
+            // Spicy Ramen
+            new RamenRecipe(ModItems.SPICY_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.REDSTONE), "spicy_ramen"),
+            new RamenRecipe(ModItems.SPICY_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.REDSTONE), "spicy_ramen_from_noodles"),
+            new RamenRecipe(ModItems.SPICY_RAMEN, List.of(ModItems.RAMEN, Items.REDSTONE), "spicy_ramen_from_ramen"),
+
+            // Blazing Ramen
+            new RamenRecipe(ModItems.BLAZING_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.REDSTONE, Items.MAGMA_CREAM), "blazing_ramen"),
+            new RamenRecipe(ModItems.BLAZING_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.REDSTONE, Items.MAGMA_CREAM), "blazing_ramen_from_noodles"),
+            new RamenRecipe(ModItems.BLAZING_RAMEN, List.of(ModItems.RAMEN, Items.REDSTONE, Items.MAGMA_CREAM), "blazing_ramen_from_ramen"),
+            new RamenRecipe(ModItems.BLAZING_RAMEN, List.of(ModItems.SPICY_RAMEN, Items.MAGMA_CREAM), "blazing_ramen_from_spicy_ramen"),
+
+            /* ---------- WATER BREATHING ---------- */
+            // Turtle Ramen
+            new RamenRecipe(ModItems.TURTLE_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.TURTLE_SCUTE), "turtle_ramen"),
+            new RamenRecipe(ModItems.TURTLE_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.TURTLE_SCUTE), "turtle_ramen_from_noodles"),
+            new RamenRecipe(ModItems.TURTLE_RAMEN, List.of(ModItems.RAMEN, Items.TURTLE_SCUTE), "turtle_ramen_from_ramen"),
+
+            // Deepsea Ramen
+            new RamenRecipe(ModItems.DEEPSEA_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.TURTLE_SCUTE, Items.PUFFERFISH), "deepsea_ramen"),
+            new RamenRecipe(ModItems.DEEPSEA_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.TURTLE_SCUTE, Items.PUFFERFISH), "deepsea_ramen_from_noodles"),
+            new RamenRecipe(ModItems.DEEPSEA_RAMEN, List.of(ModItems.RAMEN,  Items.TURTLE_SCUTE, Items.PUFFERFISH), "deepsea_ramen_from_ramen"),
+            new RamenRecipe(ModItems.DEEPSEA_RAMEN, List.of(ModItems.TURTLE_RAMEN, Items.PUFFERFISH), "deepsea_ramen_from_turtle_ramen"),
+
+            /* ---------- SWIFTNESS ---------- */
+            // Carrot Ramen
+            new RamenRecipe(ModItems.CARROT_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.CARROT), "carrot_ramen"),
+            new RamenRecipe(ModItems.CARROT_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.CARROT), "carrot_ramen_from_noodles"),
+            new RamenRecipe(ModItems.CARROT_RAMEN, List.of(ModItems.RAMEN, Items.CARROT), "carrot_ramen_from_ramen"),
+
+            // Swift Ramen
+            new RamenRecipe(ModItems.SWIFT_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.CARROT, Items.SUGAR), "swift_ramen"),
+            new RamenRecipe(ModItems.SWIFT_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.CARROT, Items.SUGAR), "swift_ramen_from_noodles"),
+            new RamenRecipe(ModItems.SWIFT_RAMEN, List.of(ModItems.RAMEN, Items.CARROT, Items.SUGAR), "swift_ramen_from_ramen"),
+            new RamenRecipe(ModItems.SWIFT_RAMEN, List.of(ModItems.CARROT_RAMEN, Items.SUGAR), "swift_ramen_from_carrot_ramen"),
+
+            /* ---------- HEALING ---------- */
+            // Mend Ramen
+            new RamenRecipe(ModItems.MEND_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.GLISTERING_MELON_SLICE), "mend_ramen"),
+            new RamenRecipe(ModItems.MEND_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.GLISTERING_MELON_SLICE), "mend_ramen_from_noodles"),
+            new RamenRecipe(ModItems.MEND_RAMEN, List.of(ModItems.RAMEN, Items.GLISTERING_MELON_SLICE), "mend_ramen_from_ramen"),
+
+            // Revive Ramen
+            new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.GLISTERING_MELON_SLICE, Items.GLISTERING_MELON_SLICE), "revive_ramen"),
+            new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.GLISTERING_MELON_SLICE, Items.GLISTERING_MELON_SLICE), "revive_ramen_from_noodles"),
+            new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(ModItems.RAMEN, Items.GLISTERING_MELON_SLICE, Items.GLISTERING_MELON_SLICE), "revive_ramen_from_ramen"),
+            new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(ModItems.MEND_RAMEN, Items.GLISTERING_MELON_SLICE), "revive_ramen_from_mend_ramen"),
+
+            /* ---------- INVISIBILITY ---------- */
+            // Faint Ramen
+            new RamenRecipe(ModItems.FAINT_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.FERMENTED_SPIDER_EYE), "faint_ramen"),
+            new RamenRecipe(ModItems.FAINT_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.FERMENTED_SPIDER_EYE), "faint_ramen_from_noodles"),
+            new RamenRecipe(ModItems.FAINT_RAMEN, List.of(ModItems.RAMEN, Items.FERMENTED_SPIDER_EYE), "faint_ramen_from_ramen"),
+
+            // Ghost Ramen
+            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.FERMENTED_SPIDER_EYE, Items.GOLDEN_CARROT), "ghost_ramen"),
+            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.FERMENTED_SPIDER_EYE, Items.GOLDEN_CARROT), "ghost_ramen_from_noodles"),
+            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(ModItems.RAMEN, Items.FERMENTED_SPIDER_EYE, Items.GOLDEN_CARROT), "ghost_ramen_from_ramen"),
+            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(ModItems.FAINT_RAMEN, Items.GOLDEN_CARROT), "ghost_ramen_from_faint_ramen"),
+
+            /* ---------- RESISTANCE ---------- */
+            // Stone Ramen
+            new RamenRecipe(ModItems.STONE_RAMEN, List.of(ModItems.RAMEN, Items.COBBLESTONE), "stone_ramen_from_ramen"),
+            new RamenRecipe(ModItems.STONE_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.COBBLESTONE), "stone_ramen"),
+            new RamenRecipe(ModItems.STONE_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.COBBLESTONE), "stone_ramen_from_noodles"),
+
+            // Iron Ramen
+            new RamenRecipe(ModItems.IRON_RAMEN, List.of(ModItems.STONE_RAMEN, Items.IRON_INGOT), "iron_ramen_from_stone_ramen"),
+            new RamenRecipe(ModItems.IRON_RAMEN, List.of(ModItems.RAMEN, Items.COBBLESTONE, Items.IRON_INGOT), "iron_ramen_from_ramen"),
+            new RamenRecipe(ModItems.IRON_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.COBBLESTONE, Items.IRON_INGOT), "iron_ramen"),
+            new RamenRecipe(ModItems.IRON_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.COBBLESTONE, Items.IRON_INGOT), "iron_ramen_from_noodles"),
+
+            /* ---------- NEGATIVE-EFFECT RAMENS ---------- */
+            new RamenRecipe(ModItems.BURNED_RAMEN, List.of(ModItems.RAMEN, Items.FERMENTED_SPIDER_EYE), "burned_ramen"),
+            new RamenRecipe(ModItems.SPOILED_RAMEN, List.of(ModItems.RAMEN, Items.SPIDER_EYE), "spoiled_ramen"),
+            new RamenRecipe(ModItems.MOLDY_RAMEN, List.of(ModItems.RAMEN, Items.BROWN_MUSHROOM), "moldy_ramen"),
+            new RamenRecipe(ModItems.ROTTEN_RAMEN, List.of(ModItems.RAMEN, Items.ROTTEN_FLESH), "rotten_ramen"),
+            new RamenRecipe(ModItems.THICK_RAMEN, List.of(ModItems.RAMEN, Items.POTATO), "thick_ramen")
         );
+
 
         for (RamenRecipe recipe : ramenRecipes) {
             offerRamenRecipe(exporter, recipe);
@@ -48,7 +190,28 @@ public class ModRecipeProvider extends FabricRecipeProvider{
         // Pair recipes
         List<RamenPair> ramenPairs = List.of(
             new RamenPair(ModItems.RAMEN, ModItems.COOKED_RAMEN, "ramen"),
-            new RamenPair(ModItems.BEEF_RAMEN, ModItems.COOKED_BEEF_RAMEN, "beef_ramen")
+            new RamenPair(ModItems.BEEF_RAMEN, ModItems.COOKED_BEEF_RAMEN, "beef_ramen"),
+            new RamenPair(ModItems.BRUTE_RAMEN, ModItems.COOKED_BRUTE_RAMEN, "brute_ramen"),
+            new RamenPair(ModItems.HERBAL_RAMEN, ModItems.COOKED_HERBAL_RAMEN, "herbal_ramen"),
+            new RamenPair(ModItems.GOLDENLEAF_RAMEN, ModItems.COOKED_GOLDENLEAF_RAMEN, "goldenleaf_ramen"),
+            new RamenPair(ModItems.GLOWBERRY_RAMEN, ModItems.COOKED_GLOWBERRY_RAMEN, "glowberry_ramen"),
+            new RamenPair(ModItems.FOX_RAMEN, ModItems.COOKED_FOX_RAMEN, "fox_ramen"),
+            new RamenPair(ModItems.RABBIT_RAMEN, ModItems.COOKED_RABBIT_RAMEN, "rabbit_ramen"),
+            new RamenPair(ModItems.LEAPING_RAMEN, ModItems.COOKED_LEAPING_RAMEN, "leaping_ramen"),
+            new RamenPair(ModItems.FEATHER_RAMEN, ModItems.COOKED_FEATHER_RAMEN, "feather_ramen"),
+            new RamenPair(ModItems.CLOUD_RAMEN, ModItems.COOKED_CLOUD_RAMEN, "cloud_ramen"),
+            new RamenPair(ModItems.SPICY_RAMEN, ModItems.COOKED_SPICY_RAMEN, "spicy_ramen"),
+            new RamenPair(ModItems.BLAZING_RAMEN, ModItems.COOKED_BLAZING_RAMEN, "blazing_ramen"),
+            new RamenPair(ModItems.TURTLE_RAMEN, ModItems.COOKED_TURTLE_RAMEN, "turtle_ramen"),
+            new RamenPair(ModItems.DEEPSEA_RAMEN, ModItems.COOKED_DEEPSEA_RAMEN, "deepsea_ramen"),
+            new RamenPair(ModItems.CARROT_RAMEN, ModItems.COOKED_CARROT_RAMEN, "carrot_ramen"),
+            new RamenPair(ModItems.SWIFT_RAMEN, ModItems.COOKED_SWIFT_RAMEN, "swift_ramen"),
+            new RamenPair(ModItems.MEND_RAMEN, ModItems.COOKED_MEND_RAMEN, "mend_ramen"),
+            new RamenPair(ModItems.REVIVE_RAMEN, ModItems.COOKED_REVIVE_RAMEN, "revive_ramen"),
+            new RamenPair(ModItems.FAINT_RAMEN, ModItems.COOKED_FAINT_RAMEN, "faint_ramen"),
+            new RamenPair(ModItems.GHOST_RAMEN, ModItems.COOKED_GHOST_RAMEN, "ghost_ramen"),
+            new RamenPair(ModItems.STONE_RAMEN, ModItems.COOKED_STONE_RAMEN, "stone_ramen"),
+            new RamenPair(ModItems.IRON_RAMEN, ModItems.COOKED_IRON_RAMEN, "iron_ramen")
         );
 
         for (RamenPair pair : ramenPairs) {

@@ -6,11 +6,16 @@
       "item": "minecraft:bowl"
     },
     {
-      "item": "onlyinstantramen:noodles"
+      "item": "minecraft:wheat"
     },
     {
-      "item": "minecraft:potion",
-      "nbt": "{Potion:\"minecraft:water\"}"
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:potion"
     }
   ],
   "result": {

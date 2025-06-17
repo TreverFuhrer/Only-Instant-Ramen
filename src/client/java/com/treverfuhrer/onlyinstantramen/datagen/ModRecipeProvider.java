@@ -8,12 +8,16 @@ import com.treverfuhrer.onlyinstantramen.item.ModItems;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.CampfireCookingRecipe;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.recipe.SmokingRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper.WrapperLookup;
 import net.minecraft.util.Identifier;
@@ -45,6 +49,42 @@ public class ModRecipeProvider extends FabricRecipeProvider{
         int campfireTime = 600;
 
         offerSmelting(exporter, List.of(input), RecipeCategory.FOOD, output, xp, smeltTime, baseName + "_from_smelting");
+        offerSmoking(exporter, List.of(input), RecipeCategory.FOOD, output, xp, smokeTime, baseName + "_from_smoking");
+        offerCampfireCooking(exporter, List.of(input), RecipeCategory.FOOD, output, xp, campfireTime, baseName + "_from_campfire");
+    }
+
+    // Helpers
+    private void offerSmoking(RecipeExporter exporter, List<Item> inputs, RecipeCategory category, Item output, float experience, int cookingTime, String name) {
+    for (Item input : inputs) {
+        CookingRecipeJsonBuilder.create(
+                Ingredient.ofItems(input),
+                category,
+                output,
+                experience,
+                cookingTime,
+                RecipeSerializer.SMOKING,
+                SmokingRecipe::new
+            )
+            .criterion("has_" + input.getTranslationKey(), conditionsFromItem(input))
+            .offerTo(exporter, Identifier.of(OnlyInstantRamen.MOD_ID, name));
+        }
+    }
+
+
+    private void offerCampfireCooking(RecipeExporter exporter, List<Item> inputs, RecipeCategory category, Item output, float experience, int cookingTime, String name) {
+    for (Item input : inputs) {
+        CookingRecipeJsonBuilder.create(
+                Ingredient.ofItems(input),
+                category,
+                output,
+                experience,
+                cookingTime,
+                RecipeSerializer.CAMPFIRE_COOKING,
+                CampfireCookingRecipe::new
+            )
+            .criterion("has_" + input.getTranslationKey(), conditionsFromItem(input))
+            .offerTo(exporter, Identifier.of(OnlyInstantRamen.MOD_ID, name));
+        }
     }
 
     private void offerBasicRamenCrafting(RecipeExporter exporter, Item output, String name) {

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "group": "cooked_ramen_from_smelting",
+  "ingredient": {
+    "item": "onlyinstantramen:ramen"
+  },
+  "result": {
+    "id": "onlyinstantramen:cooked_ramen"
+  }
+}

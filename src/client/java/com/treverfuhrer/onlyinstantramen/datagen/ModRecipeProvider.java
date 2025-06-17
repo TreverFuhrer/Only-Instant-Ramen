@@ -34,22 +34,25 @@ public class ModRecipeProvider extends FabricRecipeProvider{
     @Override
     public void generate(RecipeExporter exporter) {
 
+        // Recipes
+        List<RamenRecipe> ramenRecipes = List.of(
+            new RamenRecipe(ModItems.NOODLES, List.of(Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION), "noodles"),
+            new RamenRecipe(ModItems.RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION), "ramen"),
+            new RamenRecipe(ModItems.BEEF_RAMEN, List.of(ModItems.RAMEN, Items.COOKED_BEEF), "beef_ramen")
+        );
+
+        for (RamenRecipe recipe : ramenRecipes) {
+            offerRamenRecipe(exporter, recipe);
+        }
+
+        // Pair recipes
         List<RamenPair> ramenPairs = List.of(
             new RamenPair(ModItems.RAMEN, ModItems.COOKED_RAMEN, "ramen"),
             new RamenPair(ModItems.BEEF_RAMEN, ModItems.COOKED_BEEF_RAMEN, "beef_ramen")
         );
 
-        List<RamenRecipe> ramenRecipes = List.of(
-            new RamenRecipe(ModItems.RAMEN, List.of(Items.WHEAT, Items.WHEAT, Items.EGG, Items.WATER_BUCKET), "ramen"),
-            new RamenRecipe(ModItems.BEEF_RAMEN, List.of(ModItems.RAMEN, Items.COOKED_BEEF), "beef_ramen")
-        );
-
         for (RamenPair pair : ramenPairs) {
             generateCookingSet(exporter, pair.uncooked(), pair.cooked(), pair.id());
-        }
-
-        for (RamenRecipe recipe : ramenRecipes) {
-            offerRamenRecipe(exporter, recipe);
         }
     }
 

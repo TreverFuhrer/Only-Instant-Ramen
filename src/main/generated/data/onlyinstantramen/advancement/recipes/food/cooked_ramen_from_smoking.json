@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_item.onlyinstantramen.ramen": {
+      "conditions": {
+        "items": [
+          {
+            "items": "onlyinstantramen:ramen"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "onlyinstantramen:cooked_ramen_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_item.onlyinstantramen.ramen"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "onlyinstantramen:cooked_ramen_from_smoking"
+    ]
+  }
+}

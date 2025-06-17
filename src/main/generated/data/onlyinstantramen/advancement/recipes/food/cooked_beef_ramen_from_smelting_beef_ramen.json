@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_beef_ramen": {
+      "conditions": {
+        "items": [
+          {
+            "items": "onlyinstantramen:beef_ramen"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cooked_beef_ramen_from_smelting_beef_ramen"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_beef_ramen"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cooked_beef_ramen_from_smelting_beef_ramen"
+    ]
+  }
+}

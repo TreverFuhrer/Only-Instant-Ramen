@@ -79,6 +79,21 @@ public class ModRecipeProvider extends FabricRecipeProvider{
             new RamenRecipe(ModItems.FOX_RAMEN, List.of(ModItems.RAMEN, Items.GLOW_BERRIES, Items.GOLDEN_CARROT), "fox_ramen_from_ramen"),
             new RamenRecipe(ModItems.FOX_RAMEN, List.of(ModItems.GLOWBERRY_RAMEN, Items.GOLDEN_CARROT), "fox_ramen_from_glowberry_ramen"),
 
+            /* ---------- INVISIBILITY (Corrupted NIGHT VISION) ---------- */
+            // Faint Ramen
+            new RamenRecipe(ModItems.FAINT_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.GLOW_BERRIES, Items.FERMENTED_SPIDER_EYE), "faint_ramen"),
+            new RamenRecipe(ModItems.FAINT_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.GLOW_BERRIES, Items.FERMENTED_SPIDER_EYE), "faint_ramen_from_noodles"),
+            new RamenRecipe(ModItems.FAINT_RAMEN, List.of(ModItems.RAMEN, Items.GLOW_BERRIES, Items.FERMENTED_SPIDER_EYE), "faint_ramen_from_ramen"),
+            new RamenRecipe(ModItems.FAINT_RAMEN, List.of(ModItems.GLOWBERRY_RAMEN, Items.FERMENTED_SPIDER_EYE), "faint_ramen_from_glowberry_ramen"),
+
+            // Ghost Ramen
+            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.GLOW_BERRIES, Items.GOLDEN_CARROT, Items.FERMENTED_SPIDER_EYE), "ghost_ramen"),
+            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.GLOW_BERRIES, Items.GOLDEN_CARROT, Items.FERMENTED_SPIDER_EYE), "ghost_ramen_from_noodles"),
+            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(ModItems.RAMEN, Items.GLOW_BERRIES, Items.GOLDEN_CARROT, Items.FERMENTED_SPIDER_EYE), "ghost_ramen_from_ramen"),
+            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(ModItems.GLOWBERRY_RAMEN, Items.GOLDEN_CARROT, Items.FERMENTED_SPIDER_EYE), "ghost_ramen_from_glowberry_ramen"),
+            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(ModItems.FOX_RAMEN, Items.FERMENTED_SPIDER_EYE), "ghost_ramen_from_fox_ramen"),
+            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(ModItems.FAINT_RAMEN, Items.GOLDEN_CARROT), "ghost_ramen_from_faint_ramen"),
+
             /* ---------- JUMP BOOST ---------- */
             // Rabbit Ramen
             new RamenRecipe(ModItems.RABBIT_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.RABBIT_HIDE), "rabbit_ramen"),
@@ -150,18 +165,6 @@ public class ModRecipeProvider extends FabricRecipeProvider{
             new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(ModItems.RAMEN, Items.GLISTERING_MELON_SLICE, Items.GLISTERING_MELON_SLICE), "revive_ramen_from_ramen"),
             new RamenRecipe(ModItems.REVIVE_RAMEN, List.of(ModItems.MEND_RAMEN, Items.GLISTERING_MELON_SLICE), "revive_ramen_from_mend_ramen"),
 
-            /* ---------- INVISIBILITY ---------- */
-            // Faint Ramen
-            new RamenRecipe(ModItems.FAINT_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.FERMENTED_SPIDER_EYE), "faint_ramen"),
-            new RamenRecipe(ModItems.FAINT_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.FERMENTED_SPIDER_EYE), "faint_ramen_from_noodles"),
-            new RamenRecipe(ModItems.FAINT_RAMEN, List.of(ModItems.RAMEN, Items.FERMENTED_SPIDER_EYE), "faint_ramen_from_ramen"),
-
-            // Ghost Ramen
-            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(Items.BOWL, Items.WHEAT, Items.WHEAT, Items.EGG, Items.POTION, Items.FERMENTED_SPIDER_EYE, Items.GOLDEN_CARROT), "ghost_ramen"),
-            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(Items.BOWL, ModItems.NOODLES, Items.POTION, Items.FERMENTED_SPIDER_EYE, Items.GOLDEN_CARROT), "ghost_ramen_from_noodles"),
-            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(ModItems.RAMEN, Items.FERMENTED_SPIDER_EYE, Items.GOLDEN_CARROT), "ghost_ramen_from_ramen"),
-            new RamenRecipe(ModItems.GHOST_RAMEN, List.of(ModItems.FAINT_RAMEN, Items.GOLDEN_CARROT), "ghost_ramen_from_faint_ramen"),
-
             /* ---------- RESISTANCE ---------- */
             // Stone Ramen
             new RamenRecipe(ModItems.STONE_RAMEN, List.of(ModItems.RAMEN, Items.COBBLESTONE), "stone_ramen_from_ramen"),
@@ -177,7 +180,6 @@ public class ModRecipeProvider extends FabricRecipeProvider{
             /* ---------- NEGATIVE-EFFECT RAMENS ---------- */
             new RamenRecipe(ModItems.BURNED_RAMEN, List.of(ModItems.RAMEN, Items.FERMENTED_SPIDER_EYE), "burned_ramen"),
             new RamenRecipe(ModItems.SPOILED_RAMEN, List.of(ModItems.RAMEN, Items.SPIDER_EYE), "spoiled_ramen"),
-            new RamenRecipe(ModItems.MOLDY_RAMEN, List.of(ModItems.RAMEN, Items.BROWN_MUSHROOM), "moldy_ramen"),
             new RamenRecipe(ModItems.ROTTEN_RAMEN, List.of(ModItems.RAMEN, Items.ROTTEN_FLESH), "rotten_ramen"),
             new RamenRecipe(ModItems.THICK_RAMEN, List.of(ModItems.RAMEN, Items.POTATO), "thick_ramen")
         );

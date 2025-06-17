@@ -86,14 +86,28 @@ public final class ModItems {
     public static final Item IRON_RAMEN = registerRamen("iron_ramen", ModFoodComponents.IRON_RAMEN);
     public static final Item COOKED_IRON_RAMEN = registerRamen("cooked_iron_ramen", ModFoodComponents.COOKED_IRON_RAMEN);
 
-    // Negative Effects
-    public static final Item BURNED_RAMEN = registerRamen("burned_ramen", ModFoodComponents.BURNED_RAMEN);
-    public static final Item SPOILED_RAMEN = registerRamen("spoiled_ramen", ModFoodComponents.SPOILED_RAMEN);
-    public static final Item MOLDY_RAMEN = registerRamen("moldy_ramen", ModFoodComponents.MOLDY_RAMEN);
+    // POISON
     public static final Item ROTTEN_RAMEN = registerRamen("rotten_ramen", ModFoodComponents.ROTTEN_RAMEN);
-    public static final Item THICK_RAMEN = registerRamen("thick_ramen", ModFoodComponents.THICK_RAMEN);
+    public static final Item COOKED_ROTTEN_RAMEN = registerRamen("cooked_rotten_ramen", ModFoodComponents.COOKED_ROTTEN_RAMEN);
+    public static final Item VIRULENT_RAMEN = registerRamen("virulent_ramen", ModFoodComponents.VIRULENT_RAMEN);
+    public static final Item COOKED_VIRULENT_RAMEN = registerRamen("cooked_virulent_ramen", ModFoodComponents.COOKED_VIRULENT_RAMEN);
 
- 
+    // Harming
+    public static final Item VICIOUS_RAMEN = registerRamen("vicious_ramen", ModFoodComponents.VICIOUS_RAMEN);
+    public static final Item COOKED_VICIOUS_RAMEN = registerRamen("cooked_vicious_ramen", ModFoodComponents.COOKED_VICIOUS_RAMEN);
+    public static final Item BLIGHTED_RAMEN = registerRamen("blighted_ramen", ModFoodComponents.BLIGHTED_RAMEN);
+    public static final Item COOKED_BLIGHTED_RAMEN = registerRamen("cooked_blighted_ramen", ModFoodComponents.COOKED_BLIGHTED_RAMEN);
+
+    // Slowness
+    public static final Item THICK_RAMEN = registerRamen("thick_ramen", ModFoodComponents.THICK_RAMEN);
+    public static final Item COOKED_THICK_RAMEN = registerRamen("cooked_thick_ramen", ModFoodComponents.COOKED_THICK_RAMEN);
+    public static final Item GELATINOUS_RAMEN = registerRamen("gelatinous_ramen", ModFoodComponents.GELATINOUS_RAMEN);
+    public static final Item COOKED_GELATINOUS_RAMEN = registerRamen("cooked_gelatinous_ramen", ModFoodComponents.COOKED_GELATINOUS_RAMEN);
+
+    // WEAKNESS
+    public static final Item SPOILED_RAMEN = registerRamen("spoiled_ramen", ModFoodComponents.SPOILED_RAMEN);
+    public static final Item COOKED_SPOILED_RAMEN = registerRamen("cooked_spoiled_ramen", ModFoodComponents.COOKED_SPOILED_RAMEN);
+
     // Helper methods
     public static Item registerRamen(String name,  FoodComponent component) {
         return Registry.register(Registries.ITEM, Identifier.of(OnlyInstantRamen.MOD_ID, name), 
@@ -110,11 +124,20 @@ public final class ModItems {
             content.addAfter(Items.SPIDER_EYE, NOODLES);
 
             // Reverse order for correct appearance
-            content.addAfter(NOODLES, THICK_RAMEN);
-            content.addAfter(NOODLES, ROTTEN_RAMEN);
-            content.addAfter(NOODLES, MOLDY_RAMEN);
+            content.addAfter(NOODLES, COOKED_SPOILED_RAMEN);
             content.addAfter(NOODLES, SPOILED_RAMEN);
-            content.addAfter(NOODLES, BURNED_RAMEN);
+            content.addAfter(NOODLES, COOKED_GELATINOUS_RAMEN);
+            content.addAfter(NOODLES, GELATINOUS_RAMEN);
+            content.addAfter(NOODLES, COOKED_THICK_RAMEN);
+            content.addAfter(NOODLES, THICK_RAMEN);
+            content.addAfter(NOODLES, COOKED_BLIGHTED_RAMEN);
+            content.addAfter(NOODLES, BLIGHTED_RAMEN);
+            content.addAfter(NOODLES, COOKED_VICIOUS_RAMEN);
+            content.addAfter(NOODLES, VICIOUS_RAMEN);
+            content.addAfter(NOODLES, COOKED_VIRULENT_RAMEN);
+            content.addAfter(NOODLES, VIRULENT_RAMEN);
+            content.addAfter(NOODLES, COOKED_ROTTEN_RAMEN);
+            content.addAfter(NOODLES, ROTTEN_RAMEN);
             content.addAfter(NOODLES, COOKED_IRON_RAMEN);
             content.addAfter(NOODLES, IRON_RAMEN);
             content.addAfter(NOODLES, COOKED_STONE_RAMEN);

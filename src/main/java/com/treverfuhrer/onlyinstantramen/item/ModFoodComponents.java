@@ -77,20 +77,27 @@ public class ModFoodComponents {
     public static final FoodComponent IRON_RAMEN;
     public static final FoodComponent COOKED_IRON_RAMEN;
 
-    // Harming
-    public static final FoodComponent BURNED_RAMEN;
-
-    // Weakness
-    public static final FoodComponent SPOILED_RAMEN;
-
-    // NAUSEA
-    public static final FoodComponent MOLDY_RAMEN;
-
     // POISON
     public static final FoodComponent ROTTEN_RAMEN;
+    public static final FoodComponent COOKED_ROTTEN_RAMEN;
+    public static final FoodComponent VIRULENT_RAMEN;
+    public static final FoodComponent COOKED_VIRULENT_RAMEN;
+
+    // Harming
+    public static final FoodComponent VICIOUS_RAMEN;
+    public static final FoodComponent COOKED_VICIOUS_RAMEN;
+    public static final FoodComponent BLIGHTED_RAMEN;
+    public static final FoodComponent COOKED_BLIGHTED_RAMEN;
 
     // Slowness
     public static final FoodComponent THICK_RAMEN;
+    public static final FoodComponent COOKED_THICK_RAMEN;
+    public static final FoodComponent GELATINOUS_RAMEN;
+    public static final FoodComponent COOKED_GELATINOUS_RAMEN;
+
+    // Weakness (No L2)
+    public static final FoodComponent SPOILED_RAMEN;
+    public static final FoodComponent COOKED_SPOILED_RAMEN;
 
     // Extra
     public static final FoodComponent TINKER_RAMEN; // Haste 1
@@ -99,6 +106,7 @@ public class ModFoodComponents {
     public static final FoodComponent SHULKER_RAMEN; // Levetation 2
     public static final FoodComponent LUCKY_RAMEN; // Luck 1
     public static final FoodComponent COOKED_LUCKY_RAMEN; // Luck 2
+    public static final FoodComponent MOLDY_RAMEN; // NAUSEA
 
 
     public ModFoodComponents() {}
@@ -182,6 +190,28 @@ public class ModFoodComponents {
         IRON_RAMEN = createRamen(4, 0.4f, new StatusEffectInstance(StatusEffects.RESISTANCE, 300, 1), 1.0f).build();
         COOKED_IRON_RAMEN = createRamen(8, 0.8f, new StatusEffectInstance(StatusEffects.RESISTANCE, 1800, 1), 1.0f).build();
 
+        // POISON
+        ROTTEN_RAMEN = createRamen(2, 0.1f, new StatusEffectInstance(StatusEffects.POISON, 200, 0), 1.0f).build();
+        COOKED_ROTTEN_RAMEN = createRamen(4, 0.2f, new StatusEffectInstance(StatusEffects.POISON, 200, 0), 1.0f).build();
+        VIRULENT_RAMEN = createRamen(2, 0.2f, new StatusEffectInstance(StatusEffects.POISON, 400, 1), 1.0f).build();
+        COOKED_VIRULENT_RAMEN = createRamen(4, 0.8f, new StatusEffectInstance(StatusEffects.POISON, 2400, 1), 1.0f).build();
+
+        // HARMING
+        VICIOUS_RAMEN = createRamen(3, 0.3f, new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 0), 1.0f).build();
+        COOKED_VICIOUS_RAMEN = createRamen(6, 0.6f, new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 0), 1.0f).build();
+        BLIGHTED_RAMEN = createRamen(3, 0.3f, new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 1), 1.0f).build();
+        COOKED_BLIGHTED_RAMEN = createRamen(5, 0.9f, new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 1), 1.0f).build();
+
+        // SLOWNESS
+        THICK_RAMEN = createRamen(2, 0.2f, new StatusEffectInstance(StatusEffects.SLOWNESS, 300, 0), 1.0f).build();
+        COOKED_THICK_RAMEN = createRamen(4, 0.4f, new StatusEffectInstance(StatusEffects.SLOWNESS, 300, 0), 1.0f).build();
+        GELATINOUS_RAMEN = createRamen(2, 0.2f, new StatusEffectInstance(StatusEffects.SLOWNESS, 450, 1), 1.0f).build();
+        COOKED_GELATINOUS_RAMEN = createRamen(4, 0.8f, new StatusEffectInstance(StatusEffects.SLOWNESS, 2700, 1), 1.0f).build();
+
+        // WEAKNESS (No L2)
+        SPOILED_RAMEN = createRamen(2, 0.1f, new StatusEffectInstance(StatusEffects.WEAKNESS, 300, 0), 1.0f).build();
+        COOKED_SPOILED_RAMEN = createRamen(4, 0.2f, new StatusEffectInstance(StatusEffects.WEAKNESS, 300, 0), 1.0f).build();
+
         // Extra
         TINKER_RAMEN = createRamen(4, 0.4f, new StatusEffectInstance(StatusEffects.HASTE, 300, 0), 1.0f).build();
         MINERS_RAMEN = createRamen(8, 0.8f, new StatusEffectInstance(StatusEffects.HASTE, 1800, 1), 1.0f).build();
@@ -189,21 +219,8 @@ public class ModFoodComponents {
         SHULKER_RAMEN = createRamen(8, 0.8f, new StatusEffectInstance(StatusEffects.LEVITATION, 400, 1), 1.0f).build();
         LUCKY_RAMEN = createRamen(4, 0.4f, new StatusEffectInstance(StatusEffects.LUCK, 300, 0), 1.0f).build();
         COOKED_LUCKY_RAMEN = createRamen(8, 0.8f, new StatusEffectInstance(StatusEffects.LUCK, 1800, 0), 1.0f).build();
-
-        // Harming
-        BURNED_RAMEN = createRamen(3, 0.3f, new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 0), 1.0f).build();        
-
-        // Slowness
-        THICK_RAMEN = createRamen(2, 0.2f, new StatusEffectInstance(StatusEffects.SLOWNESS, 300, 0), 1.0f).build();
-
-        // WEAKNESS
-        SPOILED_RAMEN = createRamen(2, 0.1f, new StatusEffectInstance(StatusEffects.WEAKNESS, 300, 0), 1.0f).build();
-        
         // NAUSEA
         MOLDY_RAMEN = createRamen(2, 0.1f, new StatusEffectInstance(StatusEffects.NAUSEA, 200, 0), 1.0f).build();
-        
-        // POISON
-        ROTTEN_RAMEN = createRamen(2, 0.1f, new StatusEffectInstance(StatusEffects.POISON, 200, 0), 1.0f).build();
 
     }
 }

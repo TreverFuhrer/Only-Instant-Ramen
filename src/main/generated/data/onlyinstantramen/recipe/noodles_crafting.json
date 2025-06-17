@@ -12,8 +12,7 @@
       "item": "minecraft:egg"
     },
     {
-      "item": "minecraft:potion",
-      "nbt": "{Potion:\"minecraft:water\"}"
+      "item": "minecraft:water_bucket"
     }
   ],
   "result": {

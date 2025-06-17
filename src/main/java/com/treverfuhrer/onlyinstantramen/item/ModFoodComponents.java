@@ -212,13 +212,19 @@ public class ModFoodComponents {
         SPOILED_RAMEN = createRamen(2, 0.1f, new StatusEffectInstance(StatusEffects.WEAKNESS, 300, 0), 1.0f).build();
         COOKED_SPOILED_RAMEN = createRamen(4, 0.2f, new StatusEffectInstance(StatusEffects.WEAKNESS, 300, 0), 1.0f).build();
 
-        // Extra
+        /*----- Possible Extras -----*/
+        // Haste
         TINKER_RAMEN = createRamen(4, 0.4f, new StatusEffectInstance(StatusEffects.HASTE, 300, 0), 1.0f).build();
         MINERS_RAMEN = createRamen(8, 0.8f, new StatusEffectInstance(StatusEffects.HASTE, 1800, 1), 1.0f).build();
+
+        // Levitation
         DRIFT_RAMEN = createRamen(4, 0.4f, new StatusEffectInstance(StatusEffects.LEVITATION, 200, 0), 1.0f).build();
         SHULKER_RAMEN = createRamen(8, 0.8f, new StatusEffectInstance(StatusEffects.LEVITATION, 400, 1), 1.0f).build();
+
+        // Luck
         LUCKY_RAMEN = createRamen(4, 0.4f, new StatusEffectInstance(StatusEffects.LUCK, 300, 0), 1.0f).build();
         COOKED_LUCKY_RAMEN = createRamen(8, 0.8f, new StatusEffectInstance(StatusEffects.LUCK, 1800, 0), 1.0f).build();
+        
         // NAUSEA
         MOLDY_RAMEN = createRamen(2, 0.1f, new StatusEffectInstance(StatusEffects.NAUSEA, 200, 0), 1.0f).build();
 

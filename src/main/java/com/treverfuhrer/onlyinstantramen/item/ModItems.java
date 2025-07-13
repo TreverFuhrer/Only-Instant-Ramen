@@ -16,7 +16,7 @@ public final class ModItems {
     private ModItems() {}
  
     // Items
-    public static final Item NOODLES = registerRamen("noodles", ModFoodComponents.NOODLES);
+    public static final Item NOODLES = register("noodles", new Item(new Item.Settings().food(ModFoodComponents.NOODLES)));
     public static final Item RAMEN = registerRamen("ramen", ModFoodComponents.RAMEN);
     public static final Item COOKED_RAMEN = registerRamen("cooked_ramen", ModFoodComponents.COOKED_RAMEN);
 
